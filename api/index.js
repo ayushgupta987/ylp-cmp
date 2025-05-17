@@ -11,16 +11,17 @@ const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');  
 const session = require('express-session');  
 const flash = require('connect-flash');  
-const ExpressError = require('../utils/ExpressError');  
+const ExpressError = require('./utils/ExpressError');
+
 const methodOverride = require('method-override');  
 const passport = require('passport');  
 const LocalStrategy = require('passport-local').Strategy;  
-const User = require('../models/user');  
+const User = require('./models/user');  
 const MongoDBStore = require('connect-mongo')(session);  
 
-const userRoutes = require('../routes/users');  
-const campgroundRoutes = require('../routes/campgrounds');  
-const reviewRoutes = require('../routes/reviews');  
+const userRoutes = require('./routes/users');  
+const campgroundRoutes = require('./routes/campgrounds');  
+const reviewRoutes = require('./routes/reviews');  
 
 // Connect to MongoDB  
 mongoose.connect(dbUrl, {  
